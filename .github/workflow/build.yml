@@ -13,13 +13,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Set up Java
+        uses: actions/setup-java@v2
         with:
-          node-version: '14'
+          java-version: '19'
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Build Spring Boot Application
+        run: ./mvnw clean install
 
-      - name: Test
-        run: npm test
+      - name: Run Tests
+        run: ./mvnw test
