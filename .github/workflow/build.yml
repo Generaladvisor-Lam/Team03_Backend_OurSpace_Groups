@@ -19,7 +19,7 @@ jobs:
           java-version: '19'
 
       - name: Build Spring Boot Application
-        run: ./mvnw clean install
+        run: ./gradlew clean build
 
       - name: Run Tests
-        run: ./mvnw test
+        run: ./gradlew test
